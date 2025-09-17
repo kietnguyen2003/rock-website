@@ -1,0 +1,100 @@
+"use client"
+
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { Play } from "lucide-react"
+import { getPrimaryVideos } from "@/lib/videos-data"
+import { useState } from "react"
+
+export function VideosSection() {
+  const videos = getPrimaryVideos()
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null)
+
+  const getYouTubeVideoId = (url: string) => {
+    const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)
+    return match ? match[1] : null
+  }
+
+  const handlePlayVideo = (videoId: number, youtubeLink: string) => {
+    setPlayingVideo(videoId)
+  }
+
+  const handleCloseVideo = () => {
+    setPlayingVideo(null)
+  }
+
+  return (
+    <section className="py-16 px-6">
+      <div className="container mx-auto max-w-6xl">
+        <h2 className="text-3xl font-bold text-center text-primary mb-12">Videos</h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {videos.map((video) => {
+            const isPlaying = playingVideo === video.id
+            const youtubeId = getYouTubeVideoId(video.youtube_link)
+
+            return (
+              <div key={video.id} className="text-center">
+                <div className="relative group cursor-pointer mb-4">
+                  {isPlaying && youtubeId ? (
+                    <div className="relative w-full h-48 rounded-lg overflow-hidden">
+                      <iframe
+                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                        title={video.song_name}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                      <button
+                        onClick={handleCloseVideo}
+                        className="absolute top-2 right-2 bg-black/70 text-white rounded-full p-1 hover:bg-black/90 transition-colors"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <Image
+                        src={video.thumbnail}
+                        alt={video.song_name}
+                        width={300}
+                        height={200}
+                        className="w-full h-48 object-cover rounded-lg"
+                      />
+                      <div className="absolute inset-0 bg-black/40 rounded-lg flex items-center justify-center group-hover:bg-black/60 transition-colors">
+                        <div className="bg-background/90 rounded-full p-3">
+                          <Play className="w-6 h-6 text-primary" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="w-full"
+                          onClick={() => handlePlayVideo(video.id, video.youtube_link)}
+                        >
+                          Play video
+                        </Button>
+                      </div>
+                    </>
+                  )}
+                </div>
+                <h3 className="text-sm font-medium text-foreground">{video.song_name}</h3>
+              </div>
+            )
+          })}
+        </div>
+
+        <div className="text-center">
+          <Button
+            variant="outline"
+            className="border-primary text-primary hover:bg-primary hover:text-background bg-transparent"
+            asChild
+          >
+            <a href="/videos">Watch more videos</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
