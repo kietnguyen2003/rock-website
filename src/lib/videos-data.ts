@@ -9,58 +9,65 @@ export interface Video {
 export const videosData: Video[] = [
   {
     id: 1,
-    song_name: "Electric Waves",
-    youtube_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    song_name: "Xì xào",
+    youtube_link: "https://www.youtube.com/watch?v=ByN3QG4XO3s",
+    thumbnail: "https://img.youtube.com/vi/ByN3QG4XO3s/maxresdefault.jpg",
     is_primary: true
   },
   {
     id: 2,
-    song_name: "Neon Dreams",
-    youtube_link: "https://www.youtube.com/watch?v=oHg5SJYRHA0",
-    thumbnail: "https://img.youtube.com/vi/oHg5SJYRHA0/maxresdefault.jpg",
+    song_name: "Vết trầy",
+    youtube_link: "https://www.youtube.com/watch?v=odU9y8CfUxA",
+    thumbnail: "https://img.youtube.com/vi/odU9y8CfUxA/maxresdefault.jpg",
     is_primary: true
   },
   {
     id: 3,
-    song_name: "Digital Frequency",
-    youtube_link: "https://www.youtube.com/watch?v=9bZkp7q19f0",
-    thumbnail: "https://img.youtube.com/vi/9bZkp7q19f0/maxresdefault.jpg",
+    song_name: "Sắt đá",
+    youtube_link: "https://www.youtube.com/watch?v=eBSFL4UsYe0",
+    thumbnail: "https://img.youtube.com/vi/eBSFL4UsYe0/maxresdefault.jpg",
     is_primary: true
   },
   {
     id: 4,
-    song_name: "Gamma Rays",
-    youtube_link: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
-    thumbnail: "https://img.youtube.com/vi/kJQP7kiw5Fk/maxresdefault.jpg",
+    song_name: "Ngán mưa",
+    youtube_link: "https://www.youtube.com/watch?v=J-u07Etwrw0",
+    thumbnail: "https://img.youtube.com/vi/J-u07Etwrw0/maxresdefault.jpg",
     is_primary: false
   },
   {
     id: 5,
-    song_name: "Sound Revolution",
-    youtube_link: "https://www.youtube.com/watch?v=hFcLyDb7niM",
-    thumbnail: "https://img.youtube.com/vi/hFcLyDb7niM/maxresdefault.jpg",
+    song_name: "Đông xe",
+    youtube_link: "https://www.youtube.com/watch?v=CMYh311TzkE",
+    thumbnail: "https://img.youtube.com/vi/CMYh311TzkE/maxresdefault.jpg",
     is_primary: false
   },
   {
     id: 6,
-    song_name: "Beat Machine",
-    youtube_link: "https://www.youtube.com/watch?v=L_jWHffIx5E",
-    thumbnail: "https://img.youtube.com/vi/L_jWHffIx5E/maxresdefault.jpg",
+    song_name: "Nuối tiếc",
+    youtube_link: "https://www.youtube.com/watch?v=9lPfdQCrKrA",
+    thumbnail: "https://img.youtube.com/vi/9lPfdQCrKrA/maxresdefault.jpg",
     is_primary: false
   },
   {
     id: 7,
-    song_name: "Spectrum Light",
-    youtube_link: "https://www.youtube.com/watch?v=y6120QOlsfU",
-    thumbnail: "https://img.youtube.com/vi/y6120QOlsfU/maxresdefault.jpg",
+    song_name: "Lang thang",
+    youtube_link: "https://www.youtube.com/watch?v=DFzQlJxYvuc",
+    thumbnail: "https://img.youtube.com/vi/DFzQlJxYvuc/maxresdefault.jpg",
     is_primary: false
   },
   {
     id: 8,
-    song_name: "Future Sound",
-    youtube_link: "https://www.youtube.com/watch?v=djV11Xbc914",
-    thumbnail: "https://img.youtube.com/vi/djV11Xbc914/maxresdefault.jpg",
+    song_name: "Xót thương",
+    youtube_link: "https://www.youtube.com/watch?v=Mv80k6zEKHM",
+    thumbnail: "https://img.youtube.com/vi/Mv80k6zEKHM/maxresdefault.jpg",
+    is_primary: false
+  },
+  {
+    id: 9,
+    song_name: "Ký ức",
+    youtube_link: "https://www.youtube.com/watch?v=RCpZSVUJMuw",
+    thumbnail: "https://img.youtube.com/vi/RCpZSVUJMuw/maxresdefault.jpg",
     is_primary: false
   }
 ];

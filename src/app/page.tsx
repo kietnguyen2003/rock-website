@@ -14,7 +14,7 @@ export default function HomePage() {
           {/* Logo */}
           <div className="mb-4">
             <Image
-              src="/logo.jpg"
+              src="/logo.PNG"
               alt="The Gamma Logo"
               width={320}
               height={320}

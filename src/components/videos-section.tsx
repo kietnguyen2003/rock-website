@@ -39,11 +39,11 @@ export function VideosSection() {
                   {isPlaying && youtubeId ? (
                     <div className="relative w-full h-48 rounded-lg overflow-hidden">
                       <iframe
-                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
+                        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&enablejsapi=1`}
                         title={video.song_name}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                        className="w-full h-full"
+                        className="w-full h-full border-0"
                       />
                       <button
                         onClick={handleCloseVideo}
@@ -67,14 +67,26 @@ export function VideosSection() {
                         </div>
                       </div>
                       <div className="absolute bottom-4 left-4 right-4">
-                        <Button
-                          size="sm"
-                          variant="secondary"
-                          className="w-full"
-                          onClick={() => handlePlayVideo(video.id, video.youtube_link)}
-                        >
-                          Play video
-                        </Button>
+                        <div className="flex gap-2">
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="flex-1"
+                            onClick={() => handlePlayVideo(video.id, video.youtube_link)}
+                          >
+                            Play video
+                          </Button>
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="px-2"
+                            asChild
+                          >
+                            <a href={video.youtube_link} target="_blank" rel="noopener noreferrer">
+                              ↗
+                            </a>
+                          </Button>
+                        </div>
                       </div>
                     </>
                   )}

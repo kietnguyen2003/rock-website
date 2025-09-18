@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   description: 'Official website of The Gamma - Electronic Music Artist',
   generator: 'Next.js',
   icons: {
-    icon: '/logo.jpg',
-    shortcut: '/logo.jpg',
-    apple: '/logo.jpg',
+    icon: '/logo.PNG',
+    shortcut: '/logo.PNG',
+    apple: '/logo.PNG',
   },
 }
 
